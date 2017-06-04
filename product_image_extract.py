@@ -58,13 +58,13 @@ class HnM_ProductPage_Parser(HTMLParser):
     def get_who(self):
         return self.who
 
-item_url = "http://www.hm.com/us/product/72818?article=72818-A"
-handle = urllib.urlopen(item_url)
+url_item = "http://www.hm.com/us/product/72818?article=72818-A"
+handle = urllib.urlopen(url_item)
 html_gunk =  handle.read()
 parser = HnM_ProductPage_Parser()
 parser.feed(str(html_gunk))
 
-item_serial = item_url[item_url.find("article=")+len("article="):]
+item_serial = url_item[url_item.find("article=")+len("article="):]
 
 print "Image URL: " + parser.get_image_url()
 print "Name: " + parser.get_name()
