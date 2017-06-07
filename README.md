@@ -1,6 +1,7 @@
 # HnM_crawler
-Make a web crawler mining the web page of H&amp;M US
+Make a web crawler mining clothing images from the web pages of H&amp;M US.
 * H&M US homepage to crawl: http://www.hm.com/us/
+* For each item page, extract a worn image and a full single item image.
 
 ## 1. Steps to extract the data
 1. Extract all the item links
