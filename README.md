@@ -2,7 +2,7 @@
 Make a web crawler mining the web page of H&amp;M US
 * H&M US homepage to crawl: http://www.hm.com/us/
 
-# Steps to extract the data
+## 1. Steps to extract the data
 1. Extract all the item links
    * Items to extract: 
      * Women's, Men's
@@ -23,8 +23,8 @@ Make a web crawler mining the web page of H&amp;M US
 3. Download the images of all the items 
 4. Make an interface that helps to import the information of items and images.
 
-# Data
-## Data from the lists of all women's and men's items
+## 2. Data
+### 2.1. Data from the lists of all women's and men's items
 * Items: 8528
   * Women: 6431
     * No sale: 5189
@@ -33,11 +33,11 @@ Make a web crawler mining the web page of H&amp;M US
     * No sale: 1490
     * Sale: 607
 
-## Data selected by some categories
+### 2.2. Data selected by some categories
 * Items in the following categories: 5607
   * ['TOPS', 'BOTTOMS', 'SHIRT', 'VESTS' 'BLOUSES', 'DRESSES', 'JUMPSUITS', 'JEANS', 'PANTS', 'TROUSERS', 'CARDIGANS', 'SWEATERS', 'JUMPERS', 'HOODIES', 'SWEATSHIRTS', 'SHORTS', 'SKIRTS', 'JACKETS', 'COATS', 'BLAZERS', 'SUITS'] 
 
-## Data of extracted images
+### 2.3. Data of extracted images
 * All items have their images.
   * There are two kinds of images: __item images__, __model images__.
 * Items to extract their images: __5607__
@@ -53,14 +53,14 @@ Make a web crawler mining the web page of H&amp;M US
   * 231 MB (logically)
   * 251 MB (on disk)
 
-## Data maniplation
+### 2.4. Data maniplation
 I created a Python file able to help manipulate the downloaded images and item data.
 * File name: interface.py
   * def import\_items\_info()
 * How to use __interface__: Reference this [ipython noteobook 'guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/5-10_guide_to_using_interface.ipynb)
 
 
-## Data containing the information of items
+### 2.5. Data containing the information of items
 The following types of infromation are extracted.
 * __serial__: The identification of an item
 * __name__: The name of an item
