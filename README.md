@@ -60,4 +60,4 @@ The following types of infromation are extracted.
 ## Data maniplation
 * File name: interface.py
   * def import\_items\_info()
-* How to use __interface__: reference this [ipython noteobook 'guide\_to\_using\_interface.ipynb'](https://github.com/phoenix2718/HnM_crawler/blob/master/guide_to_using_interface.ipynb).
+* How to use __interface__: reference this [ipython noteobook 'guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/guide_to_using_interface.ipynb)
