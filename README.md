@@ -66,7 +66,7 @@ The following types of infromation are extracted.
 * __serial__: The identification of an item
 * __name__: The name of an item
 * __who__: Sex in {'Women','Men'}
-* __color__: In some item page, its color is not specified by any color name.
+* __color__: The color of an item. In some item page, its color is not specified by any color name.
 * __image__: Image URLs. Some have 1 image, the others have 2 images.
 * __url__: The URL of the page for an item
 
