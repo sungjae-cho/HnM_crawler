@@ -3,9 +3,7 @@ Make a web crawler mining the web page of H&amp;M US
 * H&M US homepage to crawl: http://www.hm.com/us/
 
 # Steps to do
-1. Extract the image of an item page
-   * Example: http://www.hm.com/us/product/72163?article=72163-A
-2. Extract all the item links
+1. Extract all the item links
    * Items to extract: 
      * women's, men's
      * Include: tops and bottoms that are not underwear
@@ -17,6 +15,9 @@ Make a web crawler mining the web page of H&amp;M US
    * All men's items
      * No sale: http://www.hm.com/us/products/men
      * Sale: http://www.hm.com/us/products/sale/men
+2. Extract the image of an item page
+   * Example: http://www.hm.com/us/product/72163?article=72163-A
+3. Make an interface that helps to import the information of items and images.
 
 # Data
 * Items: 8528
@@ -36,4 +37,3 @@ Make a web crawler mining the web page of H&amp;M US
 * Total image size: 251 MB
 
 ## Data maniplation
-Make an interface that helps to import the information of items and images.
