@@ -14,6 +14,7 @@ Make a web crawler mining clothing images from the web pages of H&amp;M US.
          * No sale: http://www.hm.com/us/products/men
          * Sale: http://www.hm.com/us/products/sale/men
      * Categories to include: tops and bottoms that are not underwear
+       * The following categories are gathered from the categories in the H&M Webpages.
        * ['TOPS', 'BOTTOMS', 'SHIRT', 'VESTS' 'BLOUSES', 'DRESSES', 'JUMPSUITS', 'JEANS', 'PANTS', 'TROUSERS', 'CARDIGANS', 'SWEATERS', 'JUMPERS', 'HOODIES', 'SWEATSHIRTS', 'SHORTS', 'SKIRTS', 'JACKETS', 'COATS', 'BLAZERS', 'SUITS']
      * Categories to exclude: shoes, socks, accessories 
 2. Extract the images and the other information from item pages
