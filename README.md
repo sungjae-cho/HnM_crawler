@@ -71,3 +71,19 @@ The following types of infromation are extracted.
 * __image__: Image URLs. Some have 1 image, the others have 2 images.
 * __url__: The URL of the page for an item
 
+## 3. Analyzing the categoreis
+* Superset categories
+  * ['ACC', 'SPORTSWEAR', 'LONG', 'TUNICS', 'LINGERIE', 'JACKETS', 'MODERN-CLASSICS', 'SHORT', 'TOPS', 'BATH', 'SOCKS', 'HM', 'BATHROOM', 'PQ', 'VESTS', 'MODERNCLASSICS', 'JEANS', 'BOTTOMS', 'SKIRTS', 'SUITS', 'HAIR', 'LEGGINGS', 'ACCESSORIES', 'NIGHTWEAR', 'SHORTS', 'DIVIDED', 'SLIM', 'BASICS', 'SWIMWEAR', 'BLAZERS', 'TSHIRT', 'SHIRTS', 'CASUAL', 'JUMPSUIT', 'TIGHTS', 'UNDERWEAR', 'BEAUTY', 'DRESSED', 'TROUSERS', 'DRESSES', 'SLEEVED', 'HOODIES', 'SHOES', 'MIDI', 'LOOSE', 'PARTYWEAR']
+* Categories to include
+  * tops, bottoms, one-piece, non-underwear
+  * tops
+    * ['JACKETS', 'TOPS', 'VESTS', 'BLAZERS', 'TSHIRT', 'SHIRTS', 'HOODIES']
+  * bottoms
+    * ['JEANS', 'BOTTOMS', 'SKIRTS', 'LEGGINGS', 'SHORTS', 'TROUSERS']
+  * onepiece
+    * ['TUNICS', 'JUMPSUIT', 'DRESSES']
+  * I will call the three categories the __TBO categories__: Tops, Bottoms, and Onepieces.
+* The number of items in the TBO categories: 5174 (Women: 3783, Men: 1391) (5-11\_category\_analysis\_for\_all\_items.ipynb)
+  * The number of tops: 2813 (Women: 1891, Men: 922)
+  * The number of bottoms: 1538 (Women: 1069, Men: 469)
+  * The number of onepieces: 916 (Women: 916, Men: 0)

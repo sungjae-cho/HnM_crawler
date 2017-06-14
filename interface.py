@@ -12,3 +12,9 @@ def import_items_info():
     dict_items_info = pickle.load(pf)
     pf.close()
     return dict_items_info
+
+def import_tbo_categories():
+    pf = open('pickle_data/dict_tbo_categories.p', 'rb')
+    tbo_categories = pickle.load(pf)
+    pf.close()
+    return tbo_categories
