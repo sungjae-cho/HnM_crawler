@@ -132,9 +132,4 @@ The following types of infromation are extracted.
 ### 4.3. Image folders
 * 'images\_clothes': the images of all items
 * 'images\_items': the images with only item without a model 
-* 'images\_models': the images with a model
-
-* 
-* 
-* 
-* 
+* 'images\_models': the images with a model 
