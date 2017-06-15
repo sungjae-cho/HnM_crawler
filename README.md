@@ -83,7 +83,13 @@ The following types of infromation are extracted.
   * onepiece
     * ['TUNICS', 'JUMPSUIT', 'DRESSES']
   * I will call the three categories the __TBO categories__: Tops, Bottoms, and Onepieces.
-* The number of items in the TBO categories: 5174 (Women: 3783, Men: 1391) (5-11\_category\_analysis\_for\_all\_items.ipynb)
-  * The number of tops: 2813 (Women: 1891, Men: 922)
-  * The number of bottoms: 1538 (Women: 1069, Men: 469)
-  * The number of onepieces: 916 (Women: 916, Men: 0)
+* The number of items that has a particular number of TBO categories (5-11\_category\_analysis\_for\_all\_items.ipynb)
+  * 0 TBO categories: 3326 (ignore) (These are like accesories, shoes, hats, etc..)
+  * 1 TBO category: 5108 (to deal with)
+  * 2 TBO categories: 94 (ignore)
+  * 3 TBO categories: 0
+* The number of items in the TBO categories: 5108 (Women: 3712, Men: 1396)
+  * The number of tops: 2811 (Women: 1886, Men: 925)
+  * The number of bottoms: 1474 (Women: 1003, Men: 471)
+  * The number of onepieces: 823 (Women: 823, Men: 0)
+
