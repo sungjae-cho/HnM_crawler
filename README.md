@@ -121,8 +121,10 @@ The following types of infromation are extracted.
     * Women    (2 images): 3075
     * Men      (2 images): 1052
     * Top      (2 images): 2285
-    * Bottom   (2 images): 1239
+    * Bottom   (2 images): 1239 
     * Onepiece (2 images): 603
+* __Error__
+  * The number of images: 9185 (But we had 9235(=981+2\*4127) image URLs.)
 * Capacity
   * Logical size: 209 MB
   * Physical size: 227 MB
