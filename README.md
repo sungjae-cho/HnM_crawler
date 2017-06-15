@@ -95,9 +95,44 @@ The following types of infromation are extracted.
 
 ## 4. Images
 * All the images are downloaded in the folder 'images\_clothes'.
-* Image name
-  * {item\_serial}\_{I,M}{W,M}{T,B,O}.jpg
-    * {item\_serial}: ID of an item
-    * {I,M}: Item, or Model
-    * {W,M}: Women, or Men
-    * {T,B,O}: Top, Botttom, or Onepiece
+
+### 4.1. Image name
+* {item\_serial}\_{I,M}{W,M}{T,B,O}.jpg
+  * {item\_serial}: ID of an item
+  * {I,M}: Item, or Model
+  * {W,M}: Women, or Men
+  * {T,B,O}: Top, Botttom, or Onepiece
+
+### 4.2. Image Count
+* Total images: 5108
+  * Items with 0 image: 0
+    * Women    (0 image): 0
+    * Men      (0 image): 0
+    * Top      (0 image): 0
+    * Bottom   (0 image): 0
+    * Onepiece (0 image): 0
+  * Items with 1 image: 981
+    * Women    (1 image): 637
+    * Men      (1 image): 344
+    * Top      (1 image): 526
+    * Bottom   (1 image): 235
+    * Onepiece (1 image): 220
+  * Items with 2 images: 4127
+    * Women    (2 images): 3075
+    * Men      (2 images): 1052
+    * Top      (2 images): 2285
+    * Bottom   (2 images): 1239
+    * Onepiece (2 images): 603
+* Capacity
+  * Logical size: 209 MB
+  * Physical size: 227 MB
+
+### 4.3. Image folders
+* 'images\_clothes': the images of all items
+* 'images\_items': the images with only item without a model 
+* 'images\_models': the images with a model
+
+* 
+* 
+* 
+* 
