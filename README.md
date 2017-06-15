@@ -3,7 +3,7 @@ Make a web crawler mining clothing images from the web pages of H&amp;M US.
 * H&M US homepage to crawl: http://www.hm.com/us/
 * For each item page, extract a worn image and a full single item image.
 
-## 1. Steps to extract the data
+## 1. Steps to proceed this project
 1. Extract all the item links
    * Items to extract: 
      * Women's, Men's
@@ -13,20 +13,19 @@ Make a web crawler mining clothing images from the web pages of H&amp;M US.
        * All men's items
          * No sale: http://www.hm.com/us/products/men
          * Sale: http://www.hm.com/us/products/sale/men
-     * Categories to include: tops and bottoms that are not underwear
-       * The following categories are gathered from the categories in the H&M Webpages.
-       * ['TOPS', 'BOTTOMS', 'SHIRT', 'VESTS' 'BLOUSES', 'DRESSES', 'JUMPSUITS', 'JEANS', 'PANTS', 'TROUSERS', 'CARDIGANS', 'SWEATERS', 'JUMPERS', 'HOODIES', 'SWEATSHIRTS', 'SHORTS', 'SKIRTS', 'JACKETS', 'COATS', 'BLAZERS', 'SUITS']
-     * Categories to exclude: shoes, socks, accessories 
-2. Extract the images and the other information from item pages
+2. Extract the images and the other information from all item pages.
    * Example: http://www.hm.com/us/product/72163?article=72163-A
      * 72163: Design number
      * A: Color
      * 72163-A: Product serial number
-3. Download the images of all the items 
-4. Make an interface that helps to import the information of items and images.
+3. Investigate which categories to download. 
+4. Download the images of all the items that has the candidate categories. 
+5. Make an interface that helps to import the information of items and images.
+6. Split all the images into two sets: images of items and images of models.
+7. Extract the width and height of item images. Then, form XML files to contain the data.
 
 ## 2. Data
-### 2.1. Data from the lists of all women's and men's items
+### 2.1. Item information from the lists of all women's and men's items
 * Items: 8528
   * Women: 6431
     * No sale: 5189
@@ -35,43 +34,36 @@ Make a web crawler mining clothing images from the web pages of H&amp;M US.
     * No sale: 1490
     * Sale: 607
 
-### 2.2. Data selected by some categories
-* Items in the following categories: 5607
-  * ['TOPS', 'BOTTOMS', 'SHIRT', 'VESTS' 'BLOUSES', 'DRESSES', 'JUMPSUITS', 'JEANS', 'PANTS', 'TROUSERS', 'CARDIGANS', 'SWEATERS', 'JUMPERS', 'HOODIES', 'SWEATSHIRTS', 'SHORTS', 'SKIRTS', 'JACKETS', 'COATS', 'BLAZERS', 'SUITS'] 
-
-### 2.3. Data of extracted images
-* All items have their images.
-  * There are two kinds of images: __item images__, __model images__.
-* Items to extract their images: __5607__
-  * Items with zero images: 0
-  * Items with one image: 1039 (Maybe they are all item images.)
-  * Items with two images: __4568__
-* Total images: __10175__
-  * Images of the items with two images: __9136__
-* Image name: {W,M}{I,M}\_{serial numder}.jpg
-  * {W, M}: 'W' means 'Women'. 'M' means 'Men'.
-  * {I, M}: 'I means 'Item image'. 'M' means 'Model image'.
-* Total image size
-  * 231 MB (logically)
-  * 251 MB (on disk)
-
-### 2.4. Data maniplation
-I created a Python file able to help manipulate the downloaded images and item data.
-* File name: interface.py
-  * def import\_items\_info()
-* How to use __interface__: Reference this [ipython notebook '4-10\_guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/4-10_guide_to_using_interface.ipynb)
-
-
-### 2.5. Data containing the information of items
+### 2.2. Data containing the information of items
 The following types of infromation are extracted.
-* __serial__: The identification of an item
-* __name__: The name of an item
-* __who__: Sex in {'Women','Men'}
-* __color__: The color of an item. In some item page, its color is not specified by any color name.
-* __image__: Image URLs. Some have 1 image, the others have 2 images.
-* __url__: The URL of the page for an item
+* item\_info['serial']: The identification of an item
+* item\_info['name']: The name of an item
+* item\_info['who']: Sex in {'Women','Men'}
+* item\_info['color']: The color of an item. In some item page, its color is not specified by any color name.
+* item\_info['image']['item']: Image URL of an item without a model 
+* item\_info['image']['model']: Image URL of a model wearing the item
+* item\_info['url']: The URL of the page for an item
+* item\_info['metricCategoryID']: the string chunk of categories of an item
+* item\_info['tbo']: Top, bottom, or onepiece
 
-## 3. Analyzing the categoreis
+### 2.3. Example: item\_info
+```
+>>> print item_info
+{'color': 'Dark denim blue rugged rinse',
+ 'image': {
+   'item': 'http://lp.hm.com/hmprod?set=key[source],value[/model/2016/D00 0399136 004 97 4998.jpg]&set=key[rotate],value[]&set=key[width],value[]&set=key[height],value[]&set=key[x],value[]&set=key[y],value[]&set=key[type],value[STILL_LIFE_FRONT]&set=key[hmver],value[1]&call=url[file:/product/large]',
+   'model': 'http://lp.hm.com/hmprod?set=key[source],value[/environment/2016/8AQ_0096_013R.jpg]&set=key[rotate],value[0]&set=key[width],value[4306]&set=key[height],value[5034]&set=key[x],value[485]&set=key[y],value[87]&set=key[type],value[FASHION_FRONT]&set=key[hmver],value[0]&call=url[file:/product/large]'
+   },
+ 'metricCategoryID': 'LADIES_JEANS_SHAPING_W198',
+ 'name': 'Shaping Skinny Regular Jeans',
+ 'serial': '47463-D',
+ 'tbo': 'bottom',
+ 'url': 'http://www.hm.com/us/product/47463?article=47463-D',
+ 'who': 'Women'
+ }
+ ```
+
+## 3. Analyzing the categoreis and investigate which categories to download
 * Superset categories
   * ['ACC', 'SPORTSWEAR', 'LONG', 'TUNICS', 'LINGERIE', 'JACKETS', 'MODERN-CLASSICS', 'SHORT', 'TOPS', 'BATH', 'SOCKS', 'HM', 'BATHROOM', 'PQ', 'VESTS', 'MODERNCLASSICS', 'JEANS', 'BOTTOMS', 'SKIRTS', 'SUITS', 'HAIR', 'LEGGINGS', 'ACCESSORIES', 'NIGHTWEAR', 'SHORTS', 'DIVIDED', 'SLIM', 'BASICS', 'SWIMWEAR', 'BLAZERS', 'TSHIRT', 'SHIRTS', 'CASUAL', 'JUMPSUIT', 'TIGHTS', 'UNDERWEAR', 'BEAUTY', 'DRESSED', 'TROUSERS', 'DRESSES', 'SLEEVED', 'HOODIES', 'SHOES', 'MIDI', 'LOOSE', 'PARTYWEAR']
 * Categories to include
@@ -92,6 +84,7 @@ The following types of infromation are extracted.
   * The number of tops: 2811 (Women: 1886, Men: 925)
   * The number of bottoms: 1474 (Women: 1003, Men: 471)
   * The number of onepieces: 823 (Women: 823, Men: 0)
+
 
 ## 4. Images
 * All the images are downloaded in the folder 'images\_clothes'.
@@ -131,5 +124,16 @@ The following types of infromation are extracted.
 
 ### 4.3. Image folders
 * 'images\_clothes': the images of all items
+* 'images\_items': the images with only item without a model 
+* 'images\_models': the images with a model 
+
+## 5. Data maniplation
+I created a Python file able to help manipulate the downloaded images and item data.
+* File name: interface.py
+  * def import\_items\_info()
+* How to use __interface__: Reference this [ipython notebook '4-10\_guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/4-10_guide_to_using_interface.ipynb)
+* Reference Section 2.2..
+
+## 6. Split image into two sets: images\_items and images\_models
 * 'images\_items': the images with only item without a model 
 * 'images\_models': the images with a model 
