@@ -93,3 +93,11 @@ The following types of infromation are extracted.
   * The number of bottoms: 1474 (Women: 1003, Men: 471)
   * The number of onepieces: 823 (Women: 823, Men: 0)
 
+## 4. Images
+* All the images are downloaded in the folder 'images\_clothes'.
+* Image name
+  * {item\_serial}\_{I,M}{W,M}{T,B,O}.jpg
+    * {item\_serial}: ID of an item
+    * {I,M}: Item, or Model
+    * {W,M}: Women, or Men
+    * {T,B,O}: Top, Botttom, or Onepiece
