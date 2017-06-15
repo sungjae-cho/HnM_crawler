@@ -8,7 +8,7 @@ This is a temporary script file.
 import pickle
 
 def import_items_info():
-    pf = open('pickle_data/dict_items_info.p', 'rb')
+    pf = open('pickle_data/dict_items_info_with_tbo.p', 'rb')
     dict_items_info = pickle.load(pf)
     pf.close()
     return dict_items_info
