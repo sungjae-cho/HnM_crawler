@@ -1,0 +1,32 @@
+<annotation>
+  <folder>images_items</folder>
+  <filename>68841-A_IMT.jpg</filename>
+  <source>
+    <database/>
+    <annotation/>
+    <image/>
+    <flickrid/>
+  </source>
+  <owner>
+    <flickrid/>
+    <name/>
+  </owner>
+  <size>
+    <width>384</width>
+    <height>449</height>
+    <depth/>
+  </size>
+  <segmented/>
+  <object>
+    <name>top</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>0</xmin>
+      <ymin>0</ymin>
+      <xmax>384</xmax>
+      <ymax>449</ymax>
+    </bndbox>
+  </object>
+</annotation>
