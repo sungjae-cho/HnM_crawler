@@ -140,17 +140,17 @@ I created a Python file able to help manipulate the downloaded images and item d
 
 ## 7. Make annotation XMLs of the item image files
 * 'images\_items\_annotation': the folder that has the annotation XMLs of the item image files, which is in the folder 'image\_items'
-* Tags used: 
-  * annotation
-    * folder: 'images\_items\_annotation'
-    * filename: image file name. '{serial}\_{I,M}{W,M}{T,B,O}.jpg'
-    * size
-      * width: image width
-      * height: image height
-    * object
-      * name: {'top', 'bottom', 'onepiece'}
-      * bndbox
-        * xmin: 0
-	* ymin: 0
-	* xmax: image width
-	* ymax: image height
+### 7.1. Tags used: 
+* annotation
+  * folder: 'images\_items\_annotation'
+  * filename: image file name. '{serial}\_{I,M}{W,M}{T,B,O}.jpg'
+  * size
+    * width: image width
+    * height: image height
+  * object
+    * name: {'top', 'bottom', 'onepiece'}
+    * bndbox
+      * xmin: 0
+      * ymin: 0
+      * xmax: image width
+      * ymax: image height
