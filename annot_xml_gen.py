@@ -69,6 +69,7 @@ def annotdict_to_annotxml(d, dir_xml):
     size_tag.append(height_tag)
 
     depth_tag = etree.Element('depth')
+    depth_tag.text = d['size']['depth']
     size_tag.append(depth_tag)
     
     # 4. Annotate to the object tag
