@@ -85,6 +85,7 @@ def annotdict_to_annotxml(d, dir_xml):
     object_tag.append(truncated_tag)
 
     difficult_tag = etree.Element('difficult')
+    difficult_tag.text = d['object']['difficult']
     object_tag.append(difficult_tag)
 
     bndbox_tag = etree.Element('bndbox')
