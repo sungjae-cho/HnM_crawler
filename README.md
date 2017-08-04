@@ -131,7 +131,7 @@ The following types of infromation are extracted.
 I created a Python file able to help manipulate the downloaded images and item data.
 * File name: interface.py
   * def import\_items\_info()
-* How to use __interface__: Reference this [ipython notebook '4-10\_guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/4-10_guide_to_using_interface.ipynb)
+* How to use __interface__: Reference this [ipython notebook '5-10\_guide\_to\_using\_interface.ipynb'](https://nbviewer.jupyter.org/github/phoenix2718/HnM_crawler/blob/master/5-10_guide_to_using_interface.ipynb)
 * Reference Section 2.2..
 
 ## 6. Split image into two sets: images\_items and images\_models
